@@ -1,0 +1,72 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Laravel API - Curso TreinaWeb",
+        "description": "Projeto do Curso Laravel APIs Restfull TreinaWeb",
+        "contact": {
+            "email": "railtonleal98@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "host": "http://localhost:8080",
+    "basePath": "/api",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/students": {
+            "get": {
+                "tags": [
+                    "Projects"
+                ],
+                "summary": "Get list of students",
+                "description": "Returns list of students",
+                "operationId": "getProjectsList",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key_security_example": []
+                    }
+                ]
+            }
+        },
+        "/students/{id}": {
+            "get": {
+                "tags": [
+                    "Projects"
+                ],
+                "summary": "Get student information",
+                "description": "Returns student data",
+                "operationId": "getProjectById",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2_security_example": [
+                            "write:students",
+                            "read:students"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "definitions": {}
+}
